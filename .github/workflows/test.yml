@@ -23,7 +23,9 @@ jobs:
           python-version: ${{ matrix.python-version }}
       - name: Install Requirements
         run: pip3 install -r requirements.txt
+      - name: second
         run: pip3 install -r dev-requirements.txt
+      - name: install
         run: python3 setup.py install
       - name: Testing
         run: tox -e py38
