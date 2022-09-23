@@ -27,7 +27,7 @@ jobs:
         run: pip3 install -r dev-requirements.txt
       - name: install
         run: python3 setup.py install
-      - name: Testing
+      - name: Testing command
         run: tox -e py38
         
         
