@@ -54,6 +54,11 @@ jobs:
             source .env/bin/activate && \
             pip3 install -r requirements.txt && \
             pip3 install -r dev-requirements.txt && \
+            pip install -e && \
+            pip freeze && \
             python3 setup.py install && \
             tox -e py38 && \ 
+            coverage erase
+            coverage run --source pykwalify -p -m py.test -v -s
+            python setup.py sdist bdist
             deactivate'
